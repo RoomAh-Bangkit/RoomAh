@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bangkit.roomah.R
+import com.bangkit.roomah.adapter.ViewPagerAdapter
 import com.bangkit.roomah.databinding.FragmentViewPagerBinding
 
 class ViewPagerFragment : Fragment() {
@@ -16,7 +16,14 @@ class ViewPagerFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_view_pager, container, false)
+    ): View {
+        _binding = FragmentViewPagerBinding.inflate(inflater, container,false)
+
+        binding.viewPager.adapter = ViewPagerAdapter(
+            requireActivity().supportFragmentManager,
+            lifecycle
+        )
+
+        return binding.root
     }
 }

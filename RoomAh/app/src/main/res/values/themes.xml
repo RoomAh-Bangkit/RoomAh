@@ -13,4 +13,62 @@
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- Layout -->
+    <style name="Parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="ColumnContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="RowContent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+        <item name="android:textColor">@color/blue_700</item>
+    </style>
+
+    <!-- Content -->
+    <style name="Content.Title">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">@color/blue_300</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+    <style name="Content.SubTitle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/blue_700</item>
+    </style>
+    <style name="Content.Big">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+    <style name="Content.Medium">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/open_sans_semi_bold</item>
+    </style>
+    <style name="Content.Small">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="Content.Small.Bold">
+        <item name="android:fontFamily">@font/open_sans_semi_bold</item>
+    </style>
+    <style name="Content.Mini">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+
+    <!-- Icon & Image -->
+    <style name="CircleButton">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
+    </style>
 </resources>

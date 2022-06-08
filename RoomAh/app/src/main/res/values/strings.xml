@@ -1,5 +1,30 @@
 <resources>
     <string name="app_name">RoomAh</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- On Boarding -->
+    <string name="onboarding_image">OnBoarding Image</string>
+    <string name="onboarding_title">Lorem Ipsum</string>
+    <string name="onboarding_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum, ante quis ultricies egestas, sed fringilla augue libero sed tellus</string>
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_move">Get Started</string>
+
+    <!-- On Boarding Items-->
+    <string-array name="onboarding_titles">
+        <item>Lorem Ipsum 1</item>
+        <item>Lorem Ipsum 2</item>
+        <item>Lorem Ipsum 3</item>
+    </string-array>
+
+    <string-array name="onboarding_subtitles">
+        <item>1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum, ante quis ultricies egestas, quam justo dignissim quam, sed fringilla augue libero sed tellus.</item>
+        <item>2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum, ante quis ultricies egestas, quam justo dignissim quam, sed fringilla augue libero sed tellus.</item>
+        <item>3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum, ante quis ultricies egestas, quam justo dignissim quam, sed fringilla augue libero sed tellus.</item>
+    </string-array>
+
+    <string-array name="onboarding_images">
+        <item>@drawable/img_onboarding_1</item>
+        <item>@drawable/img_onboarding_2</item>
+        <item>@drawable/img_onboarding_3</item>
+    </string-array>
 </resources>
