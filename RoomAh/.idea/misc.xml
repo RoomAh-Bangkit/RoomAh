@@ -5,7 +5,10 @@
       <map>
         <entry key="app/src/main/res/drawable/bg_gradient.xml" value="0.143" />
         <entry key="app/src/main/res/drawable/bg_onboarding_button.xml" value="0.143" />
+        <entry key="app/src/main/res/layout/activity_camera.xml" value="0.14792299898682879" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/fragment_onboarding.xml" value="0.22056159420289856" />
+        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/fragment_view_pager.xml" value="0.22056159420289856" />
       </map>
     </option>
