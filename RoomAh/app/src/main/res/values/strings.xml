@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">RoomAh</string>
 
+    <!-- Splash Screen -->
+    <string name="splash_image">Splash Image</string>
+
     <!-- On Boarding -->
     <string name="onboarding_image">OnBoarding Image</string>
     <string name="onboarding_title">Lorem Ipsum</string>
