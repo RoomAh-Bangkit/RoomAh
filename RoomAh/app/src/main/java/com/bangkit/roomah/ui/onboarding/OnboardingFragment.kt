@@ -1,6 +1,7 @@
 package com.bangkit.roomah.ui.onboarding
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.bangkit.roomah.R
 import com.bangkit.roomah.data.model.OnBoarding
 import com.bangkit.roomah.databinding.FragmentOnboardingBinding
+import com.bangkit.roomah.ui.camera.CameraActivity
 import com.bumptech.glide.Glide
 
 class OnboardingFragment : Fragment() {
@@ -67,10 +69,10 @@ class OnboardingFragment : Fragment() {
         setFinishedOnBoarding()
 
         // Go To Another Activity
-//        Intent(requireContext(), CameraActivity::class.java).also { intent ->
-//            startActivity(intent)
-//            requireActivity().finish()
-//        }
+        Intent(requireContext(), CameraActivity::class.java).also { intent ->
+            startActivity(intent)
+            requireActivity().finish()
+        }
     }
 
     private fun setFinishedOnBoarding() {
