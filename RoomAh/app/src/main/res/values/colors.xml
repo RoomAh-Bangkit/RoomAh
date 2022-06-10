@@ -9,6 +9,7 @@
 
     <color name="brown">#FF9C7E35</color>
     <color name="orange">#FFF9A01B</color>
+    <color name="orange_transparent">#66F9A01B</color>
     <color name="red">#FFCC5C1D</color>
 
     <color name="black">#FF000000</color>

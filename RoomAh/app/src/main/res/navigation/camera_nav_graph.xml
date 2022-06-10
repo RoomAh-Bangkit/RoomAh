@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/camera_nav_graph"
+    app:startDestination="@id/cameraXFragment">
+
+    <fragment
+        android:id="@+id/cameraXFragment"
+        android:name="com.bangkit.roomah.ui.camera.CameraXFragment"
+        android:label="fragment_camera_x"
+        tools:layout="@layout/fragment_camera_x" >
+        <action
+            android:id="@+id/action_cameraXFragment_to_cameraValidateFragment"
+            app:destination="@id/cameraValidateFragment"
+            app:popUpTo="@id/cameraXFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraValidateFragment"
+        android:name="com.bangkit.roomah.ui.camera.CameraValidateFragment"
+        android:label="fragment_camera_validate"
+        tools:layout="@layout/fragment_camera_validate" >
+        <action
+            android:id="@+id/action_cameraValidateFragment_to_cameraResultFragment"
+            app:destination="@id/cameraResultFragment"
+            app:popUpTo="@id/cameraXFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraResultFragment"
+        android:name="com.bangkit.roomah.ui.camera.CameraResultFragment"
+        android:label="fragment_camera_result"
+        tools:layout="@layout/fragment_camera_result" />
+</navigation>

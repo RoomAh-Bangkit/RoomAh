@@ -12,6 +12,11 @@
     <string name="onboarding_next">Next</string>
     <string name="onboarding_move">Get Started</string>
 
+    <!-- Camera -->
+    <string name="captured_image">Captured Image</string>
+    <string name="proceed">✓</string>
+    <string name="cancel">X</string>
+
     <!-- On Boarding Items-->
     <string-array name="onboarding_titles">
         <item>Classify</item>

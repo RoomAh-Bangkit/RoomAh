@@ -19,6 +19,11 @@
         <item name="android:statusBarColor">@color/blue_900</item>
     </style>
 
+    <style name="Theme.CameraScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
     <!-- Layout -->
     <style name="Parent">
         <item name="android:layout_width">match_parent</item>

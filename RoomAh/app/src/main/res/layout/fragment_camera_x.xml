@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Parent"
+    tools:context=".ui.camera.CameraXFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_mid"
+        android:orientation="vertical"
+        style="@style/Content"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/view_finder"
+        style="@style/Parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_gallery"
+        style="@style/CircleButton"
+        android:background="@drawable/bg_camera_gallery_button"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_mid"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_capture"
+        style="@style/CircleButton"
+        android:background="@drawable/bg_camera_capture_button"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_switch"
+        style="@style/CircleButton"
+        android:background="@drawable/bg_camera_switch_button"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintStart_toEndOf="@id/guideline_mid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
