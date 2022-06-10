@@ -1,17 +1,22 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.RoomAh" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/blue_700</item>
-        <item name="colorPrimaryVariant">@color/blue_200</item>
+        <item name="colorPrimaryVariant">@color/blue_500</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/orange_200</item>
-        <item name="colorSecondaryVariant">@color/orange_500</item>
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorSecondaryVariant">@color/red</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.SplashScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:background">@color/blue_900</item>
+        <item name="android:statusBarColor">@color/blue_700</item>
     </style>
 
     <!-- Layout -->
@@ -33,35 +38,38 @@
     <style name="Content">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- Text -->
+    <style name="Content.Text">
         <item name="android:fontFamily">@font/open_sans_regular</item>
         <item name="android:textColor">@color/blue_700</item>
     </style>
 
-    <!-- Content -->
-    <style name="Content.Title">
+    <style name="Content.Text.Title">
         <item name="android:textSize">36sp</item>
         <item name="android:textColor">@color/blue_300</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
-    <style name="Content.SubTitle">
+    <style name="Content.Text.SubTitle">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/blue_700</item>
     </style>
-    <style name="Content.Big">
+    <style name="Content.Text.Big">
         <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
-    <style name="Content.Medium">
+    <style name="Content.Text.Medium">
         <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">@font/open_sans_semi_bold</item>
     </style>
-    <style name="Content.Small">
+    <style name="Content.Text.Small">
         <item name="android:textSize">14sp</item>
     </style>
-    <style name="Content.Small.Bold">
+    <style name="Content.Text.Small.Bold">
         <item name="android:fontFamily">@font/open_sans_semi_bold</item>
     </style>
-    <style name="Content.Mini">
+    <style name="Content.Text.Mini">
         <item name="android:textSize">12sp</item>
         <item name="android:fontFamily">@font/open_sans_light</item>
     </style>

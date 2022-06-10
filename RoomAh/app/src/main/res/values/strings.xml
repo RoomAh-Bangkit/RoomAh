@@ -14,15 +14,15 @@
 
     <!-- On Boarding Items-->
     <string-array name="onboarding_titles">
-        <item>Lorem Ipsum 1</item>
-        <item>Lorem Ipsum 2</item>
-        <item>Lorem Ipsum 3</item>
+        <item>Classify</item>
+        <item>Save</item>
+        <item>Share</item>
     </string-array>
 
     <string-array name="onboarding_subtitles">
-        <item>1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum, ante quis ultricies egestas, quam justo dignissim quam, sed fringilla augue libero sed tellus.</item>
-        <item>2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum, ante quis ultricies egestas, quam justo dignissim quam, sed fringilla augue libero sed tellus.</item>
-        <item>3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum, ante quis ultricies egestas, quam justo dignissim quam, sed fringilla augue libero sed tellus.</item>
+        <item>The overrepresentation of room’s picture can be reduced by classifying rooms in an establisment based on the submitted pictures</item>
+        <item>There is also the features of saving classfied room picture that can be used into your local device </item>
+        <item>Share your accommodation or house to potential buyers here!</item>
     </string-array>
 
     <string-array name="onboarding_images">
