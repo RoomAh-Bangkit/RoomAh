@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.bangkit.roomah.databinding.ActivityCameraBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CameraActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCameraBinding

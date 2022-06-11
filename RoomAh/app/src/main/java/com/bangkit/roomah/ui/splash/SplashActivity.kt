@@ -12,6 +12,7 @@ import com.bangkit.roomah.ui.camera.CameraActivity
 import com.bangkit.roomah.ui.onboarding.OnboardingActivity
 
 class SplashActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivitySplashBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,19 +22,13 @@ class SplashActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             if (isOnBoardingFinished()) {
-                Intent(
-                    this@SplashActivity,
-                    CameraActivity::class.java
-                ).also { intent ->
+                Intent(this@SplashActivity, CameraActivity::class.java).also { intent ->
                     startActivity(intent)
                     finish()
                 }
                 Log.d(TAG, "Go To Camera")
             } else {
-                Intent(
-                    this@SplashActivity,
-                    OnboardingActivity::class.java
-                ).also { intent ->
+                Intent(this@SplashActivity, OnboardingActivity::class.java).also { intent ->
                     startActivity(intent)
                     finish()
                 }

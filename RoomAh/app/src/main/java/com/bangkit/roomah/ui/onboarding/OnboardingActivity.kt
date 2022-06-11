@@ -54,10 +54,7 @@ class OnboardingActivity : AppCompatActivity() {
     private fun finishOnBoarding() {
         setFinishedOnBoarding()
 
-        Intent(
-            this@OnboardingActivity,
-            CameraActivity::class.java
-        ).also { intent ->
+        Intent(this@OnboardingActivity, CameraActivity::class.java).also { intent ->
             startActivity(intent)
             finish()
         }

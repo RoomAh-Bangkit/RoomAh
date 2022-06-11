@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -12,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageCaptureException
@@ -22,10 +24,13 @@ import androidx.navigation.fragment.findNavController
 import com.bangkit.roomah.R
 import com.bangkit.roomah.databinding.FragmentCameraXBinding
 import com.bangkit.roomah.ui.home.HomeActivity
+import com.bangkit.roomah.utils.FileHandler
+import dagger.hilt.android.AndroidEntryPoint
 import java.lang.Exception
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
+@AndroidEntryPoint
 class CameraXFragment : Fragment() {
 
     private var _binding: FragmentCameraXBinding? = null
@@ -38,19 +43,31 @@ class CameraXFragment : Fragment() {
     private var cameraSelector: CameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
     private val requestPermissions = registerForActivityResult(
-        ActivityResultContracts.RequestMultiplePermissions()
-    ) { permissions ->
-        permissions.entries.forEach { permission ->
-            Log.d(TAG, "${permission.key} = ${permission.value}")
-        }
-
-        if (allPermissionGranted()) {
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+        if (isGranted) {
             startCamera()
         } else {
             Toast.makeText(safeContext, R.string.permission_not_granted, Toast.LENGTH_SHORT).show()
             Intent(safeContext, HomeActivity::class.java).also { intent ->
                 startActivity(intent)
+                requireActivity().finish()
             }
+        }
+    }
+
+    private val launcherIntentGallery = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == AppCompatActivity.RESULT_OK) {
+            val selectedImg: Uri = result.data?.data as Uri
+            val photoFile = FileHandler.uriToFile(selectedImg, safeContext)
+
+            val toValidateFragment = CameraXFragmentDirections
+                .actionCameraXFragmentToCameraValidateFragment(
+                    photoFile, true
+                )
+            findNavController().navigate(toValidateFragment)
         }
     }
 
@@ -75,30 +92,10 @@ class CameraXFragment : Fragment() {
         if (allPermissionGranted()) {
             startCamera()
         } else {
-            requestPermissions.launch(REQUIRED_PERMISSIONS)
+            requestPermissions.launch(REQUIRED_PERMISSION)
         }
 
-        // Action
-        binding.apply {
-            btnSwitch.setOnClickListener {
-                cameraSelector =
-                    if (cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA)
-                        CameraSelector.DEFAULT_FRONT_CAMERA
-                    else
-                        CameraSelector.DEFAULT_BACK_CAMERA
-                startCamera()
-            }
-
-            btnCapture.setOnClickListener {
-                takePhoto()
-            }
-
-            btnBars.setOnClickListener {
-                Intent(safeContext, HomeActivity::class.java).also { intent ->
-                    startActivity(intent)
-                }
-            }
-        }
+        setUpActions()
     }
 
     override fun onResume() {
@@ -112,9 +109,16 @@ class CameraXFragment : Fragment() {
     }
 
     private fun allPermissionGranted() =
-        REQUIRED_PERMISSIONS.all {
-            ContextCompat.checkSelfPermission(safeContext, it) == PackageManager.PERMISSION_GRANTED
+        ContextCompat.checkSelfPermission(safeContext, REQUIRED_PERMISSION) == PackageManager.PERMISSION_GRANTED
+
+    private fun openGallery() {
+        val intent = Intent().apply {
+            action = Intent.ACTION_GET_CONTENT
+            type = "image/*"
         }
+        val chooser = Intent.createChooser(intent, "Choose a Picture")
+        launcherIntentGallery.launch(chooser)
+    }
 
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(safeContext)
@@ -144,44 +148,69 @@ class CameraXFragment : Fragment() {
     }
 
     private fun takePhoto() {
-        Toast.makeText(safeContext, resources.getString(R.string.captured_image), Toast.LENGTH_SHORT).show()
-//        val imageCapture = imageCapture ?: return
-//
-//        val photoFile = createFile(application)
-//
-//        val outputOptions = ImageCapture
-//            .OutputFileOptions
-//            .Builder(photoFile)
-//            .build()
-//
-//        imageCapture.takePicture(
-//            outputOptions,
-//            ContextCompat.getMainExecutor(safeContext),
-//            object : ImageCapture.OnImageSavedCallback {
-//                override fun onImageSaved(output: ImageCapture.OutputFileResults) {
-//                    val toValidateFragment = CameraXFragmentDirections
-//                        .actionCameraXFragmentToCameraValidateFragment(
-//                            photoFile,
-//                            cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA
-//                        )
-//                    findNavController().navigate(toValidateFragment)
-//                }
-//
-//                override fun onError(exception: ImageCaptureException) {
-//                    Log.e(TAG, "onError: ${exception.message}")
-//
-//                    Toast.makeText(
-//                        safeContext,
-//                        resources.getString(R.string.capture_failure),
-//                        Toast.LENGTH_SHORT
-//                    ).show()
-//                }
-//            }
-//        )
+        val imageCapture = imageCapture ?: return
+        val photoFile = FileHandler.createCustomTempFile(safeContext)
+
+        val outputOptions = ImageCapture
+            .OutputFileOptions
+            .Builder(photoFile)
+            .build()
+
+        imageCapture.takePicture(
+            outputOptions,
+            ContextCompat.getMainExecutor(safeContext),
+            object : ImageCapture.OnImageSavedCallback {
+                override fun onImageSaved(output: ImageCapture.OutputFileResults) {
+                    val toValidateFragment = CameraXFragmentDirections
+                        .actionCameraXFragmentToCameraValidateFragment(
+                            photoFile,
+                            cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA
+                        )
+                    findNavController().navigate(toValidateFragment)
+                }
+
+                override fun onError(exception: ImageCaptureException) {
+                    Log.e(TAG, "onError: ${exception.message}")
+
+                    Toast.makeText(
+                        safeContext,
+                        resources.getString(R.string.capture_failure),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        )
+    }
+
+    private fun setUpActions() {
+        binding.apply {
+            btnGallery.setOnClickListener {
+                openGallery()
+            }
+
+            btnCapture.setOnClickListener {
+                takePhoto()
+            }
+
+            btnSwitch.setOnClickListener {
+                cameraSelector =
+                    if (cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA)
+                        CameraSelector.DEFAULT_FRONT_CAMERA
+                    else
+                        CameraSelector.DEFAULT_BACK_CAMERA
+                startCamera()
+            }
+
+            btnBars.setOnClickListener {
+                Intent(safeContext, HomeActivity::class.java).also { intent ->
+                    startActivity(intent)
+                }
+            }
+        }
     }
 
     companion object {
         private const val TAG = "cameraX"
-        val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
+        private const val REQUIRED_PERMISSION = Manifest.permission.CAMERA
     }
 }

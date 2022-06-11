@@ -20,6 +20,9 @@
     <string name="permission_not_granted">Permissions not granted by User</string>
     <string name="capture_failure">Fail to capture an image</string>
     <string name="photo_saved">Photo saved on %s</string>
+    <string name="result">Room</string>
+    <string name="upload_success">Upload Success</string>
+    <string name="upload_failure">Upload Failure</string>
 
     <!-- Gallery -->
     <string name="gallery_card">Gallery Image Card</string>
