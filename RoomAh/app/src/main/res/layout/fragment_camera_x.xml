@@ -20,6 +20,16 @@
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_bars"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/ic_bars"
+        android:layout_marginTop="64dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_gallery"
         style="@style/CircleButton"
         android:background="@drawable/bg_camera_gallery_button"

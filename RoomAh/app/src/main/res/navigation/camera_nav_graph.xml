@@ -13,6 +13,10 @@
         <action
             android:id="@+id/action_cameraXFragment_to_cameraValidateFragment"
             app:destination="@id/cameraValidateFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out_invers"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
             app:popUpTo="@id/cameraXFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -24,12 +28,29 @@
         <action
             android:id="@+id/action_cameraValidateFragment_to_cameraResultFragment"
             app:destination="@id/cameraResultFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out_invers"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
             app:popUpTo="@id/cameraXFragment"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="picture"
+            app:argType="java.io.File" />
+        <argument
+            android:name="isBackCamera"
+            app:argType="boolean" />
     </fragment>
     <fragment
         android:id="@+id/cameraResultFragment"
         android:name="com.bangkit.roomah.ui.camera.CameraResultFragment"
         android:label="fragment_camera_result"
-        tools:layout="@layout/fragment_camera_result" />
+        tools:layout="@layout/fragment_camera_result" >
+        <argument
+            android:name="picture"
+            app:argType="java.io.File" />
+        <argument
+            android:name="result"
+            app:argType="string" />
+    </fragment>
 </navigation>
