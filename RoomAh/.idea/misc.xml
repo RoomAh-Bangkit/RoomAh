@@ -3,27 +3,35 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1835" />
         <entry key="app/src/main/res/drawable/bg_camera_bars_button.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_camera_capture_button.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_camera_gallery_button.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_camera_result_button.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_camera_switch_button.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bg_custom_radio_button.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable/bg_gradient.xml" value="0.143" />
         <entry key="app/src/main/res/drawable/bg_onboarding_button.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bg_radio_button_text_color.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable/bg_shadow_gradient.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_bars.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1835" />
+        <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1835" />
+        <entry key="app/src/main/res/drawable/ic_roomah.xml" value="0.1835" />
         <entry key="app/src/main/res/layout/activity_camera.xml" value="0.14792299898682879" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.12817028985507245" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.41912689208984377" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22056159420289856" />
-        <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.1899507949659044" />
+        <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.39301170805184193" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.13065056303231062" />
         <entry key="app/src/main/res/layout/card_gallery.xml" value="0.3086216802182405" />
-        <entry key="app/src/main/res/layout/fragment_camera_result.xml" value="0.294097900390625" />
+        <entry key="app/src/main/res/layout/fragment_camera_result.xml" value="0.3280029296875" />
         <entry key="app/src/main/res/layout/fragment_camera_validate.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_camera_x.xml" value="0.10216522216796875" />
         <entry key="app/src/main/res/layout/fragment_onboarding.xml" value="0.28998029155115923" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.13496246337890627" />
         <entry key="app/src/main/res/layout/fragment_view_pager.xml" value="0.22056159420289856" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1655" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1655" />
         <entry key="app/src/main/res/xml/file_paths.xml" value="0.16875" />
       </map>
     </option>

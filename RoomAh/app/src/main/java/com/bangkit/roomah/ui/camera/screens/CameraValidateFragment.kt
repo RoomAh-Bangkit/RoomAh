@@ -1,4 +1,4 @@
-package com.bangkit.roomah.ui.camera
+package com.bangkit.roomah.ui.camera.screens
 
 import android.content.Context
 import android.graphics.BitmapFactory
@@ -14,6 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.bangkit.roomah.R
 import com.bangkit.roomah.databinding.FragmentCameraValidateBinding
+import com.bangkit.roomah.ui.camera.CameraViewModel
 import com.bangkit.roomah.utils.FileHandler
 import com.bangkit.roomah.utils.animateVisibility
 import com.google.android.material.snackbar.Snackbar
@@ -65,6 +66,9 @@ class CameraValidateFragment : Fragment() {
         setUpActions()
     }
 
+    /**
+     * Set up Button OnClick
+     */
     private fun setUpActions() {
         binding.apply {
             btnProceed.setOnClickListener {
@@ -77,6 +81,9 @@ class CameraValidateFragment : Fragment() {
         }
     }
 
+    /**
+     * Classifying image captured or uploaded from gallery
+     */
     private fun classifyImage() {
         setLoadingState(true)
 
@@ -98,8 +105,7 @@ class CameraValidateFragment : Fragment() {
                             Toast.LENGTH_SHORT
                         ).show()
 
-                        val toResultFragment = CameraValidateFragmentDirections
-                            .actionCameraValidateFragmentToCameraResultFragment(
+                        val toResultFragment = CameraValidateFragmentDirections.actionCameraValidateFragmentToCameraResultFragment(
                                 getFile, it.result, isBackCamera
                             )
                         findNavController().navigate(toResultFragment)
@@ -121,6 +127,11 @@ class CameraValidateFragment : Fragment() {
         }
     }
 
+    /**
+     * Set up Loading view on Background process
+     *
+     * @param isLoading is still sending request data to server
+     */
     private fun setLoadingState(isLoading: Boolean) {
         binding.apply {
             btnProceed.isEnabled = !isLoading

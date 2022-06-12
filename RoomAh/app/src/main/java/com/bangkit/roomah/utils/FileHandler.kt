@@ -1,5 +1,6 @@
 package com.bangkit.roomah.utils
 
+import android.app.Application
 import android.content.ContentResolver
 import android.content.Context
 import android.graphics.Bitmap
@@ -7,6 +8,7 @@ import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.net.Uri
 import android.os.Environment
+import com.bangkit.roomah.R
 import java.io.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -71,6 +73,20 @@ object FileHandler {
         } else {
             matrix.postScale(-1f, 1f, bitmap.width / 2f, bitmap.height / 2f)
             Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+        }
+    }
+
+    fun initFolders(application: Application) {
+        listOf("Bathroom", "Bedroom", "Dinning", "Kitchen", "Livingroom").forEach() { name ->
+            application.externalMediaDirs.firstOrNull()?.let {
+                File(it, application.resources.getString(R.string.folder_name, name)).apply { mkdirs() }
+            }
+        }
+    }
+
+    fun copyImage(application: Application, file: File, foldername: String) {
+        application.externalMediaDirs.firstOrNull()?.let {
+            file.copyTo(File(it, application.resources.getString(R.string.folder_name, foldername)), true)
         }
     }
 }

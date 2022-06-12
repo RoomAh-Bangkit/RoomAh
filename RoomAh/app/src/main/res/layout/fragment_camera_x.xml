@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/Parent"
-    tools:context=".ui.camera.CameraXFragment">
+    tools:context=".ui.camera.screens.CameraXFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_mid"

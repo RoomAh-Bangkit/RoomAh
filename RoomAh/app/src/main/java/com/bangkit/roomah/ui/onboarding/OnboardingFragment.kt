@@ -9,7 +9,9 @@ import com.bangkit.roomah.R
 import com.bangkit.roomah.data.model.OnBoarding
 import com.bangkit.roomah.databinding.FragmentOnboardingBinding
 import com.bumptech.glide.Glide
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OnboardingFragment : Fragment() {
 
     private var _binding: FragmentOnboardingBinding? = null
@@ -44,6 +46,12 @@ class OnboardingFragment : Fragment() {
         }
     }
 
+    /**
+     * Get OnBoarding screen data from resources based on position
+     *
+     * @param pos screen position start from 0 to 2
+     * @return OnBoarding type
+     */
     private fun getOnBoardingItem(pos: Int) : OnBoarding {
 
         val onboardingTitle = resources.getStringArray(R.array.onboarding_titles)

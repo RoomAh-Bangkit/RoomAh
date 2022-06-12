@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">RoomAh</string>
+    <string name="folder_name">RoomAh/%s</string>
+    <string name="image_name">%s/%s</string>
 
     <!-- Splash Screen -->
     <string name="splash_image">Splash Image</string>
@@ -27,6 +29,15 @@
     <!-- Gallery -->
     <string name="gallery_card">Gallery Image Card</string>
     <string name="saved_picture">Saved Picture</string>
+    <string name="empty_gallery">There is no picture</string>
+    <string name="latest">Latest Photo</string>
+    <string name="bathroom">Bathroom</string>
+    <string name="bedroom">Bedroom</string>
+    <string name="dining">Dining</string>
+    <string name="kitchen">Kitchen</string>
+    <string name="livingroom">Livingroom</string>
+    <string name="fetch_success">Fetch Local Image Success</string>
+    <string name="fetch_failure">Fetch Local Image Failure</string>
 
     <!-- On Boarding Items-->
     <string-array name="onboarding_titles">
@@ -36,8 +47,8 @@
     </string-array>
 
     <string-array name="onboarding_subtitles">
-        <item>The overrepresentation of room’s picture can be reduced by classifying rooms in an establisment based on the submitted pictures</item>
-        <item>There is also the features of saving classfied room picture that can be used into your local device </item>
+        <item>The overrepresentation of room’s picture can be reduced by classifying rooms in an establishment based on the submitted pictures</item>
+        <item>There is also the features of saving classified room picture that can be used into your local device </item>
         <item>Share your accommodation or house to potential buyers here!</item>
     </string-array>
 

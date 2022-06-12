@@ -1,4 +1,4 @@
-package com.bangkit.roomah.ui.camera
+package com.bangkit.roomah.ui.camera.screens
 
 import android.Manifest
 import android.content.Context
@@ -49,10 +49,6 @@ class CameraXFragment : Fragment() {
             startCamera()
         } else {
             Toast.makeText(safeContext, R.string.permission_not_granted, Toast.LENGTH_SHORT).show()
-            Intent(safeContext, HomeActivity::class.java).also { intent ->
-                startActivity(intent)
-                requireActivity().finish()
-            }
         }
     }
 
@@ -63,8 +59,7 @@ class CameraXFragment : Fragment() {
             val selectedImg: Uri = result.data?.data as Uri
             val photoFile = FileHandler.uriToFile(selectedImg, safeContext)
 
-            val toValidateFragment = CameraXFragmentDirections
-                .actionCameraXFragmentToCameraValidateFragment(
+            val toValidateFragment = CameraXFragmentDirections.actionCameraXFragmentToCameraValidateFragment(
                     photoFile, true
                 )
             findNavController().navigate(toValidateFragment)
@@ -108,9 +103,17 @@ class CameraXFragment : Fragment() {
         cameraExecutor.shutdown()
     }
 
+    /**
+     * Check if all permissions granted
+     *
+     * @return Boolean camera permission allowed
+     */
     private fun allPermissionGranted() =
         ContextCompat.checkSelfPermission(safeContext, REQUIRED_PERMISSION) == PackageManager.PERMISSION_GRANTED
 
+    /**
+     * Open gallery to access local image resources
+     */
     private fun openGallery() {
         val intent = Intent().apply {
             action = Intent.ACTION_GET_CONTENT
@@ -120,6 +123,9 @@ class CameraXFragment : Fragment() {
         launcherIntentGallery.launch(chooser)
     }
 
+    /**
+     * Start camera when permission allowed
+     */
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(safeContext)
 
@@ -147,6 +153,9 @@ class CameraXFragment : Fragment() {
         }, ContextCompat.getMainExecutor(safeContext))
     }
 
+    /**
+     * Take photo using camera
+     */
     private fun takePhoto() {
         val imageCapture = imageCapture ?: return
         val photoFile = FileHandler.createCustomTempFile(safeContext)
@@ -161,8 +170,7 @@ class CameraXFragment : Fragment() {
             ContextCompat.getMainExecutor(safeContext),
             object : ImageCapture.OnImageSavedCallback {
                 override fun onImageSaved(output: ImageCapture.OutputFileResults) {
-                    val toValidateFragment = CameraXFragmentDirections
-                        .actionCameraXFragmentToCameraValidateFragment(
+                    val toValidateFragment = CameraXFragmentDirections.actionCameraXFragmentToCameraValidateFragment(
                             photoFile,
                             cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA
                         )
@@ -182,23 +190,28 @@ class CameraXFragment : Fragment() {
         )
     }
 
+    /**
+     * Set up Button OnClick
+     */
     private fun setUpActions() {
         binding.apply {
+            if (allPermissionGranted()) {
+                btnCapture.setOnClickListener {
+                    takePhoto()
+                }
+
+                btnSwitch.setOnClickListener {
+                    cameraSelector =
+                        if (cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA)
+                            CameraSelector.DEFAULT_FRONT_CAMERA
+                        else
+                            CameraSelector.DEFAULT_BACK_CAMERA
+                    startCamera()
+                }
+            }
+
             btnGallery.setOnClickListener {
                 openGallery()
-            }
-
-            btnCapture.setOnClickListener {
-                takePhoto()
-            }
-
-            btnSwitch.setOnClickListener {
-                cameraSelector =
-                    if (cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA)
-                        CameraSelector.DEFAULT_FRONT_CAMERA
-                    else
-                        CameraSelector.DEFAULT_BACK_CAMERA
-                startCamera()
             }
 
             btnBars.setOnClickListener {

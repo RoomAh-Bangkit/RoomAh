@@ -16,7 +16,7 @@ class CameraViewModel @Inject constructor(
      * Handle image uploading process to the server
      *
      * @param file Image file
-     **/
+     */
     suspend fun classifyImage(
         file: MultipartBody.Part
     ): Flow<Result<ClassifyResponses>> =

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/cameraXFragment"
-        android:name="com.bangkit.roomah.ui.camera.CameraXFragment"
+        android:name="com.bangkit.roomah.ui.camera.screens.CameraXFragment"
         android:label="fragment_camera_x"
         tools:layout="@layout/fragment_camera_x" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/cameraValidateFragment"
-        android:name="com.bangkit.roomah.ui.camera.CameraValidateFragment"
+        android:name="com.bangkit.roomah.ui.camera.screens.CameraValidateFragment"
         android:label="fragment_camera_validate"
         tools:layout="@layout/fragment_camera_validate" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/cameraResultFragment"
-        android:name="com.bangkit.roomah.ui.camera.CameraResultFragment"
+        android:name="com.bangkit.roomah.ui.camera.screens.CameraResultFragment"
         android:label="fragment_camera_result"
         tools:layout="@layout/fragment_camera_result" >
         <argument

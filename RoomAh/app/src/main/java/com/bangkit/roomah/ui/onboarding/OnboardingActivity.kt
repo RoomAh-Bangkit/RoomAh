@@ -10,7 +10,10 @@ import com.bangkit.roomah.R
 import com.bangkit.roomah.adapter.ViewPagerAdapter
 import com.bangkit.roomah.databinding.ActivityOnboardingBinding
 import com.bangkit.roomah.ui.camera.CameraActivity
+import com.bangkit.roomah.utils.FileHandler
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OnboardingActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityOnboardingBinding
@@ -51,8 +54,12 @@ class OnboardingActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Finish OnBoarding and go to CameraActivity
+     */
     private fun finishOnBoarding() {
         setFinishedOnBoarding()
+        FileHandler.initFolders(application)
 
         Intent(this@OnboardingActivity, CameraActivity::class.java).also { intent ->
             startActivity(intent)
@@ -60,6 +67,9 @@ class OnboardingActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Set isOnBoardingFinished state on Shared Preferences to true
+     */
     private fun setFinishedOnBoarding() {
         val pref = getSharedPreferences(
             "onBoarding",
