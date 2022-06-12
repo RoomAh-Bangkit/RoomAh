@@ -1,4 +1,4 @@
-package com.bangkit.roomah.ui.camera
+package com.bangkit.roomah.ui.camera.screens
 
 import android.graphics.BitmapFactory
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import com.bangkit.roomah.R
 import com.bangkit.roomah.databinding.FragmentCameraResultBinding
 import com.bangkit.roomah.utils.FileHandler
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,7 +36,15 @@ class CameraResultFragment : Fragment() {
 
         val result = CameraResultFragmentArgs.fromBundle(arguments as Bundle).result
         val getFile = CameraResultFragmentArgs.fromBundle(arguments as Bundle).picture
-        val isBackCamera = CameraResultFragmentArgs.fromBundle(arguments as Bundle).isBackCamera
+        FileHandler.copyImage(
+            requireActivity().application,
+            getFile,
+            resources.getString(R.string.image_name, result, getFile.name)
+        )
+
+        val isBackCamera = CameraResultFragmentArgs.fromBundle(
+            arguments as Bundle
+        ).isBackCamera
 
         val photo = FileHandler.rotateBitmap(
             BitmapFactory.decodeFile(getFile.path),

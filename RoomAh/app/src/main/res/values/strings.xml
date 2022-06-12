@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">RoomAh</string>
+    <string name="folder_name">RoomAh/%s</string>
+    <string name="image_name">%s/%s</string>
 
     <!-- Splash Screen -->
     <string name="splash_image">Splash Image</string>
@@ -27,6 +29,12 @@
     <!-- Gallery -->
     <string name="gallery_card">Gallery Image Card</string>
     <string name="saved_picture">Saved Picture</string>
+    <string name="latest">Latest Photo</string>
+    <string name="bathroom">Bathroom</string>
+    <string name="bedroom">Bedroom</string>
+    <string name="dining">Dining</string>
+    <string name="kitchen">Kitchen</string>
+    <string name="livingroom">Livingroom</string>
 
     <!-- On Boarding Items-->
     <string-array name="onboarding_titles">

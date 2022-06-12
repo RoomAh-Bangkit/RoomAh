@@ -5,7 +5,7 @@
     style="@style/Parent"
     android:background="@drawable/bg_gradient"
     android:fitsSystemWindows="true"
-    tools:context=".ui.camera.CameraResultFragment">
+    tools:context=".ui.camera.screens.CameraResultFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_left"

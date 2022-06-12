@@ -1,4 +1,4 @@
-package com.bangkit.roomah.ui.camera
+package com.bangkit.roomah.ui.camera.screens
 
 import android.Manifest
 import android.content.Context
@@ -63,8 +63,7 @@ class CameraXFragment : Fragment() {
             val selectedImg: Uri = result.data?.data as Uri
             val photoFile = FileHandler.uriToFile(selectedImg, safeContext)
 
-            val toValidateFragment = CameraXFragmentDirections
-                .actionCameraXFragmentToCameraValidateFragment(
+            val toValidateFragment = CameraXFragmentDirections.actionCameraXFragmentToCameraValidateFragment(
                     photoFile, true
                 )
             findNavController().navigate(toValidateFragment)
@@ -161,8 +160,7 @@ class CameraXFragment : Fragment() {
             ContextCompat.getMainExecutor(safeContext),
             object : ImageCapture.OnImageSavedCallback {
                 override fun onImageSaved(output: ImageCapture.OutputFileResults) {
-                    val toValidateFragment = CameraXFragmentDirections
-                        .actionCameraXFragmentToCameraValidateFragment(
+                    val toValidateFragment = CameraXFragmentDirections.actionCameraXFragmentToCameraValidateFragment(
                             photoFile,
                             cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA
                         )

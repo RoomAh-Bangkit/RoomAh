@@ -1,4 +1,4 @@
-package com.bangkit.roomah.ui.camera
+package com.bangkit.roomah.ui.camera.screens
 
 import android.content.Context
 import android.graphics.BitmapFactory
@@ -14,6 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.bangkit.roomah.R
 import com.bangkit.roomah.databinding.FragmentCameraValidateBinding
+import com.bangkit.roomah.ui.camera.CameraViewModel
 import com.bangkit.roomah.utils.FileHandler
 import com.bangkit.roomah.utils.animateVisibility
 import com.google.android.material.snackbar.Snackbar
@@ -98,8 +99,7 @@ class CameraValidateFragment : Fragment() {
                             Toast.LENGTH_SHORT
                         ).show()
 
-                        val toResultFragment = CameraValidateFragmentDirections
-                            .actionCameraValidateFragmentToCameraResultFragment(
+                        val toResultFragment = CameraValidateFragmentDirections.actionCameraValidateFragmentToCameraResultFragment(
                                 getFile, it.result, isBackCamera
                             )
                         findNavController().navigate(toResultFragment)

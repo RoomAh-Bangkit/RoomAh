@@ -10,6 +10,7 @@ import com.bangkit.roomah.R
 import com.bangkit.roomah.adapter.ViewPagerAdapter
 import com.bangkit.roomah.databinding.ActivityOnboardingBinding
 import com.bangkit.roomah.ui.camera.CameraActivity
+import com.bangkit.roomah.utils.FileHandler
 
 class OnboardingActivity : AppCompatActivity() {
 
@@ -53,6 +54,7 @@ class OnboardingActivity : AppCompatActivity() {
 
     private fun finishOnBoarding() {
         setFinishedOnBoarding()
+        FileHandler.initFolders(application)
 
         Intent(this@OnboardingActivity, CameraActivity::class.java).also { intent ->
             startActivity(intent)
