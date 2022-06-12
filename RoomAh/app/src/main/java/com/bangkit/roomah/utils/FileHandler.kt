@@ -77,7 +77,7 @@ object FileHandler {
     }
 
     fun initFolders(application: Application) {
-        listOf("Bathroom", "Bedroom", "Dinning", "Kitchen", "Livingroom").forEach() { name ->
+        listOf("Bathroom", "Bedroom", "Dining Room", "Kitchen", "Living Room").forEach() { name ->
             application.externalMediaDirs.firstOrNull()?.let {
                 File(it, application.resources.getString(R.string.folder_name, name)).apply { mkdirs() }
             }

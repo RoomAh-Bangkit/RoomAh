@@ -9,13 +9,13 @@
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_left"
         android:orientation="vertical"
-        style="@style/Content.Text"
+        style="@style/Content"
         app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_right"
         android:orientation="vertical"
-        style="@style/Content.Text"
+        style="@style/Content"
         app:layout_constraintGuide_percent="0.9" />
 
     <ImageView

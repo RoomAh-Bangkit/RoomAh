@@ -6,7 +6,7 @@
     tools:context=".ui.splash.SplashActivity">
 
     <ImageView
-        style="@style/Content.Text"
+        style="@style/Content"
         android:src="@drawable/ic_roomah"
         android:contentDescription="@string/splash_image"
         android:paddingHorizontal="24dp"

@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/drawable/bg_camera_result_button.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_camera_switch_button.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_custom_radio_button.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/bg_fab.xml" value="0.1835" />
         <entry key="app/src/main/res/drawable/bg_gradient.xml" value="0.143" />
         <entry key="app/src/main/res/drawable/bg_onboarding_button.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_radio_button_text_color.xml" value="0.1645" />
@@ -19,7 +20,8 @@
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1835" />
         <entry key="app/src/main/res/drawable/ic_roomah.xml" value="0.1835" />
         <entry key="app/src/main/res/layout/activity_camera.xml" value="0.14792299898682879" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.41912689208984377" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.20591888427734378" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.39301170805184193" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.13065056303231062" />

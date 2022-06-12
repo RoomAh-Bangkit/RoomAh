@@ -95,15 +95,17 @@
 
     <ImageView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:elevation="2dp"
         android:contentDescription="@string/saved_picture"
         android:src="@drawable/img_saved_picture"
-        android:scaleType="fitCenter"
-        android:layout_marginStart="-28dp"
-        android:layout_marginTop="-88dp"
+        android:scaleType="centerCrop"
+        android:layout_marginStart="-32dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="-100dp"
         app:layout_constraintStart_toEndOf="@id/guideline_left"
         app:layout_constraintTop_toTopOf="@id/cv_saved_picture"
-        app:layout_constraintEnd_toStartOf="@id/guideline_right"/>
+        app:layout_constraintEnd_toStartOf="@id/guideline_right"
+        app:layout_constraintBottom_toBottomOf="@id/cv_saved_picture"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

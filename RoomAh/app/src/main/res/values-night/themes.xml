@@ -29,17 +29,14 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
     </style>
-
     <style name="ColumnContent">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
     </style>
-
     <style name="RowContent">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
-
     <style name="Content">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -50,14 +47,9 @@
         <item name="android:fontFamily">@font/open_sans_regular</item>
         <item name="android:textColor">@color/blue_900</item>
     </style>
-
     <style name="Content.Text.Title">
         <item name="android:textSize">32sp</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
-    </style>
-    <style name="Content.Text.Title.Red">
-        <item name="android:textColor">@color/red</item>
-        <item name="android:textSize">28sp</item>
     </style>
     <style name="Content.Text.SubTitle">
         <item name="android:textSize">18sp</item>
@@ -68,19 +60,16 @@
         <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">@font/open_sans_semi_bold</item>
     </style>
+    <style name="Content.Text.Big.Red">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">24sp</item>
+    </style>
     <style name="Content.Text.Medium">
         <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">@font/open_sans_semi_bold</item>
     </style>
     <style name="Content.Text.Small">
         <item name="android:textSize">14sp</item>
-    </style>
-    <style name="Content.Text.Small.Bold">
-        <item name="android:fontFamily">@font/open_sans_semi_bold</item>
-    </style>
-    <style name="Content.Text.Mini">
-        <item name="android:textSize">12sp</item>
-        <item name="android:fontFamily">@font/open_sans_light</item>
     </style>
 
     <!-- Icon & Image -->

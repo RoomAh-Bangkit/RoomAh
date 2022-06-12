@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="blue_300">#FFC8E4FF</color>
+    <color name="blue_300_transparent">#66C8E4FF</color>
     <color name="blue_500">#FF73ADFF</color>
     <color name="blue_600">#FF85A3C3</color>
     <color name="blue_700">#FF607C97</color>

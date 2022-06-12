@@ -1,12 +1,11 @@
 package com.bangkit.roomah.ui.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.RadioButton
-import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bangkit.roomah.R
@@ -24,6 +23,8 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
     private val homeViewModel: HomeViewModel by viewModels()
 
+    private lateinit var radioButton: RadioButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -31,12 +32,12 @@ class HomeActivity : AppCompatActivity() {
 
         setUpToolbar()
 
-        val defaultRB = findViewById<RadioButton>(binding.radioGroup.checkedRadioButtonId)
-        fetchImages(defaultRB.text.toString())
+        radioButton = findViewById(binding.radioGroup.checkedRadioButtonId)
+        fetchImages(radioButton.text.toString())
 
         binding.radioGroup.setOnCheckedChangeListener { p0, _ ->
-            val checkedRB = findViewById<RadioButton>(p0.checkedRadioButtonId)
-            fetchImages(checkedRB.text.toString())
+            radioButton = findViewById(p0.checkedRadioButtonId)
+            fetchImages(radioButton.text.toString())
         }
     }
 
@@ -60,12 +61,6 @@ class HomeActivity : AppCompatActivity() {
             launch {
                 homeViewModel.fetchAllData(path).collect { response ->
                     response.onSuccess {
-                        Toast.makeText(
-                            applicationContext,
-                            getString(R.string.fetch_success),
-                            Toast.LENGTH_SHORT
-                        ).show()
-
                         val paths = ArrayList<String>()
                         for (p in it) paths.add(p)
                         showRecyclerView(paths)
@@ -96,9 +91,8 @@ class HomeActivity : AppCompatActivity() {
      */
     private fun showRecyclerView(paths: ArrayList<String>) {
         val rvGallery = binding.rvGallery
-
         rvGallery.layoutManager = GridLayoutManager(this, 5)
-        rvGallery.adapter = GalleryAdapter(paths)
+        rvGallery.adapter = GalleryAdapter(paths, radioButton.text.toString())
     }
 
     /**
@@ -119,6 +113,7 @@ class HomeActivity : AppCompatActivity() {
     private fun showEmptyImage(isEmptyData: Boolean) {
         binding.emptyImage.visibility = if (isEmptyData) View.VISIBLE else View.GONE
         binding.emptyTitle.visibility = if (isEmptyData) View.VISIBLE else View.GONE
+        binding.tvLatest.visibility = if (isEmptyData) View.GONE else View.VISIBLE
     }
 
     /**

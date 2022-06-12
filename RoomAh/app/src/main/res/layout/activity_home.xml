@@ -23,22 +23,14 @@
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_left"
         android:orientation="vertical"
-        style="@style/Content.Text"
+        style="@style/Content"
         app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_right"
         android:orientation="vertical"
-        style="@style/Content.Text"
+        style="@style/Content"
         app:layout_constraintGuide_percent="0.9" />
-
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_refresh"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <HorizontalScrollView
         android:id="@+id/horizontal_scroll"
@@ -84,7 +76,7 @@
                 android:layout_height="32dp"
                 android:paddingHorizontal="12dp"
                 android:layout_marginStart="12dp"
-                android:text="@string/dining"
+                android:text="@string/dining_room"
                 android:textColor="@drawable/bg_radio_button_text_color"
                 android:textAlignment="center"
                 android:button="@null"
@@ -109,7 +101,7 @@
                 android:paddingHorizontal="12dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="16dp"
-                android:text="@string/livingroom"
+                android:text="@string/living_room"
                 android:textColor="@drawable/bg_radio_button_text_color"
                 android:textAlignment="center"
                 android:button="@null"
@@ -123,7 +115,7 @@
         android:id="@+id/tv_latest"
         style="@style/Content.Text.Big"
         android:text="@string/latest"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/horizontal_scroll" />
@@ -149,7 +141,7 @@
         android:layout_height="300dp"
         android:scaleType="fitCenter"
         android:layout_marginTop="32dp"
-        android:layout_marginHorizontal="48dp"
+        android:layout_marginHorizontal="32dp"
         android:src="@drawable/img_empty_picture"
         android:contentDescription="@string/onboarding_image"
         app:layout_constraintStart_toEndOf="@id/guideline_left"
@@ -159,7 +151,7 @@
 
     <TextView
         android:id="@+id/empty_title"
-        style="@style/Content.Text.Title.Red"
+        style="@style/Content.Text.Big.Red"
         android:text="@string/empty_gallery"
         android:shadowColor="@color/blue_600"
         android:shadowDy="12"

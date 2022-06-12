@@ -33,11 +33,16 @@
     <string name="latest">Latest Photo</string>
     <string name="bathroom">Bathroom</string>
     <string name="bedroom">Bedroom</string>
-    <string name="dining">Dining</string>
+    <string name="dining_room">Dining Room</string>
     <string name="kitchen">Kitchen</string>
-    <string name="livingroom">Livingroom</string>
+    <string name="living_room">Living Room</string>
     <string name="fetch_success">Fetch Local Image Success</string>
     <string name="fetch_failure">Fetch Local Image Failure</string>
+
+    <!-- Detail Gallery -->
+    <string name="detail_title">%s</string>
+    <string name="fab">Share Button</string>
+    <string name="share_via">Share image via</string>
 
     <!-- On Boarding Items-->
     <string-array name="onboarding_titles">
