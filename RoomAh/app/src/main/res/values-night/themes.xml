@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.RoomAh" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/blue_700</item>
+        <item name="colorPrimary">@color/blue_900</item>
         <item name="colorPrimaryVariant">@color/blue_500</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -16,7 +16,12 @@
 
     <style name="Theme.SplashScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:background">@color/blue_900</item>
-        <item name="android:statusBarColor">@color/blue_700</item>
+        <item name="android:statusBarColor">@color/blue_900</item>
+    </style>
+
+    <style name="Theme.CameraScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <!-- Layout -->
@@ -43,21 +48,21 @@
     <!-- Text -->
     <style name="Content.Text">
         <item name="android:fontFamily">@font/open_sans_regular</item>
-        <item name="android:textColor">@color/blue_700</item>
+        <item name="android:textColor">@color/blue_900</item>
     </style>
 
     <style name="Content.Text.Title">
-        <item name="android:textSize">36sp</item>
-        <item name="android:textColor">@color/blue_300</item>
+        <item name="android:textSize">32sp</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
     <style name="Content.Text.SubTitle">
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/blue_700</item>
+        <item name="android:fontFamily">@font/open_sans_semi_bold</item>
     </style>
     <style name="Content.Text.Big">
-        <item name="android:textSize">20sp</item>
-        <item name="android:fontFamily">@font/open_sans_bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/open_sans_semi_bold</item>
     </style>
     <style name="Content.Text.Medium">
         <item name="android:textSize">18sp</item>

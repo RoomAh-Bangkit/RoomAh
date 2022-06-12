@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/Parent"
     android:background="@drawable/bg_gradient"
+    android:fitsSystemWindows="true"
     tools:context=".ui.camera.CameraResultFragment">
 
     <androidx.constraintlayout.widget.Guideline

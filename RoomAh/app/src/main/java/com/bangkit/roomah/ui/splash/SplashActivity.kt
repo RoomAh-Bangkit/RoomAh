@@ -1,5 +1,6 @@
 package com.bangkit.roomah.ui.splash
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ import com.bangkit.roomah.databinding.ActivitySplashBinding
 import com.bangkit.roomah.ui.camera.CameraActivity
 import com.bangkit.roomah.ui.onboarding.OnboardingActivity
 
+@SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashBinding
