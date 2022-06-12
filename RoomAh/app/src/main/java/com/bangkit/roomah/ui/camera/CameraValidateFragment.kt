@@ -3,6 +3,7 @@ package com.bangkit.roomah.ui.camera
 import android.content.Context
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -82,7 +83,7 @@ class CameraValidateFragment : Fragment() {
         val file = FileHandler.reduceFileImage(getFile)
         val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
         val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
-            "photo",
+            "file",
             file.name,
             requestImageFile
         )
@@ -107,6 +108,8 @@ class CameraValidateFragment : Fragment() {
 
                     response.onFailure {
                         setLoadingState(false)
+                        Log.d("On Failure API", it.message ?: "null")
+
                         Snackbar.make(
                             binding.root,
                             getString(R.string.upload_failure),

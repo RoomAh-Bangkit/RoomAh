@@ -3,7 +3,6 @@ package com.bangkit.roomah.ui.camera
 import androidx.lifecycle.ViewModel
 import com.bangkit.roomah.data.remote.response.ClassifyResponses
 import com.bangkit.roomah.data.repository.ClassifyRepository
-import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import okhttp3.MultipartBody

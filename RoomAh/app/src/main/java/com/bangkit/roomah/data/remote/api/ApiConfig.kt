@@ -1,6 +1,7 @@
 package com.bangkit.roomah.data.remote.api
 
 import com.bangkit.roomah.BuildConfig
+import okhttp3.ConnectionSpec
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -20,12 +21,15 @@ class ApiConfig {
                 HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
             }
 
+            val specs = listOf(ConnectionSpec.CLEARTEXT, ConnectionSpec.MODERN_TLS)
+
             val client = OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
+                .connectionSpecs(specs)
                 .build()
 
             val retrofit = Retrofit.Builder()
-                .baseUrl(BuildConfig.BASE_URL + "/")
+                .baseUrl(BuildConfig.BASE_URL + '/')
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
