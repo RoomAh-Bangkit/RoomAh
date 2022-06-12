@@ -9,7 +9,9 @@ import com.bangkit.roomah.R
 import com.bangkit.roomah.data.model.OnBoarding
 import com.bangkit.roomah.databinding.FragmentOnboardingBinding
 import com.bumptech.glide.Glide
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OnboardingFragment : Fragment() {
 
     private var _binding: FragmentOnboardingBinding? = null

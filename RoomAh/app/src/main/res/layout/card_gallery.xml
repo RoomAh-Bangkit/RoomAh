@@ -9,6 +9,7 @@
     <ImageView
         android:id="@+id/iv_gallery_card"
         style="@style/Parent"
+        android:scaleType="centerCrop"
         android:contentDescription="@string/gallery_card" />
 
 </androidx.cardview.widget.CardView>

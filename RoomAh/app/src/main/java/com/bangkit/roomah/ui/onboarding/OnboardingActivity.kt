@@ -11,7 +11,9 @@ import com.bangkit.roomah.adapter.ViewPagerAdapter
 import com.bangkit.roomah.databinding.ActivityOnboardingBinding
 import com.bangkit.roomah.ui.camera.CameraActivity
 import com.bangkit.roomah.utils.FileHandler
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OnboardingActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityOnboardingBinding

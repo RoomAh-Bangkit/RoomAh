@@ -20,10 +20,22 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left"
+        android:orientation="vertical"
+        style="@style/Content.Text"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right"
+        android:orientation="vertical"
+        style="@style/Content.Text"
+        app:layout_constraintGuide_percent="0.9" />
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="120dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -130,5 +142,48 @@
         tools:itemCount="15"
         tools:orientation="vertical"
         tools:spanCount="5"/>
+
+    <ImageView
+        android:id="@+id/empty_image"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="48dp"
+        android:src="@drawable/img_empty_picture"
+        android:contentDescription="@string/onboarding_image"
+        app:layout_constraintStart_toEndOf="@id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_scroll"
+        app:layout_constraintEnd_toStartOf="@id/guideline_right"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/empty_title"
+        style="@style/Content.Text.Title.Red"
+        android:text="@string/empty_gallery"
+        android:shadowColor="@color/blue_600"
+        android:shadowDy="12"
+        android:shadowRadius="8"
+        app:layout_constraintStart_toEndOf="@id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@+id/empty_image"
+        app:layout_constraintEnd_toStartOf="@id/guideline_right"
+        tools:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/view_loading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        android:background="@color/white_transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            style="@style/Content"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

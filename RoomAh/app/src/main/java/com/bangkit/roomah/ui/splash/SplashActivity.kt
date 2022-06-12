@@ -11,7 +11,9 @@ import android.util.Log
 import com.bangkit.roomah.databinding.ActivitySplashBinding
 import com.bangkit.roomah.ui.camera.CameraActivity
 import com.bangkit.roomah.ui.onboarding.OnboardingActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
 

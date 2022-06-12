@@ -55,6 +55,10 @@
         <item name="android:textSize">32sp</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
+    <style name="Content.Text.Title.Red">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">28sp</item>
+    </style>
     <style name="Content.Text.SubTitle">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/blue_700</item>

@@ -29,12 +29,15 @@
     <!-- Gallery -->
     <string name="gallery_card">Gallery Image Card</string>
     <string name="saved_picture">Saved Picture</string>
+    <string name="empty_gallery">There is no picture</string>
     <string name="latest">Latest Photo</string>
     <string name="bathroom">Bathroom</string>
     <string name="bedroom">Bedroom</string>
     <string name="dining">Dining</string>
     <string name="kitchen">Kitchen</string>
     <string name="livingroom">Livingroom</string>
+    <string name="fetch_success">Fetch Local Image Success</string>
+    <string name="fetch_failure">Fetch Local Image Failure</string>
 
     <!-- On Boarding Items-->
     <string-array name="onboarding_titles">

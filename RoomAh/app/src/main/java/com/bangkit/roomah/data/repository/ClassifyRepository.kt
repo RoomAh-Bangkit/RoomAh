@@ -6,6 +6,7 @@ import okhttp3.MultipartBody
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import java.io.File
 
 class ClassifyRepository @Inject constructor(
     private val apiService: ApiService
@@ -26,4 +27,26 @@ class ClassifyRepository @Inject constructor(
             emit(Result.failure(e))
         }
     }
+
+    /**
+     * Handle image fetching from local
+     *
+     * @param path Path folder
+     */
+    suspend fun fetchAllData(
+        path: String
+    ): Flow<Result<List<String>>> = flow {
+        try {
+            val response = mutableListOf<String>()
+            File(path).listFiles()?.forEach {
+                response.add(it.path)
+            }
+            emit(Result.success(response))
+        } catch (e: Exception) {
+            e.printStackTrace()
+            emit(Result.failure(e))
+        }
+    }
+
+
 }

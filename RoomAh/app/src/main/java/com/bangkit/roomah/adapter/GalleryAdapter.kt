@@ -1,32 +1,20 @@
 package com.bangkit.roomah.adapter
 
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bangkit.roomah.R
 import com.bangkit.roomah.databinding.CardGalleryBinding
-import com.bangkit.roomah.ui.home.FileSelectionListener
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import java.io.File
 
-class GalleryAdapter(private val listFiles: ArrayList<File>, private val listener: FileSelectionListener) : RecyclerView.Adapter<GalleryAdapter.GridViewHolder>() {
+class GalleryAdapter(private val paths: ArrayList<String>)
+    : RecyclerView.Adapter<GalleryAdapter.GridViewHolder>() {
     inner class GridViewHolder(
-        private val binding: CardGalleryBinding,
-        private val listener: FileSelectionListener
+        private val binding: CardGalleryBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(f: File) {
-            val context = itemView.context
-
-            Glide.with(context)
-                .load(f)
-                .apply(RequestOptions()
-                    .placeholder(R.drawable.bg_shadow_gradient)
-                    .centerCrop())
-                .into(binding.ivGalleryCard)
-
-            itemView.setOnClickListener { listener.onFileSelected(f) }
+        fun bind(path: String) {
+            binding.ivGalleryCard.setImageBitmap(BitmapFactory.decodeFile(path))
+            itemView.setOnClickListener { }
         }
     }
 
@@ -34,15 +22,15 @@ class GalleryAdapter(private val listFiles: ArrayList<File>, private val listene
         return GridViewHolder(
             CardGalleryBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
-            ), listener
+            )
         )
     }
 
     override fun onBindViewHolder(holder: GridViewHolder, position: Int) {
         with (holder) {
-            bind(listFiles[position])
+            bind(paths[position])
         }
     }
 
-    override fun getItemCount(): Int = listFiles.size
+    override fun getItemCount(): Int = paths.size
 }
