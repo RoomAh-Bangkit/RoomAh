@@ -12,6 +12,22 @@
     <string name="onboarding_next">Next</string>
     <string name="onboarding_move">Get Started</string>
 
+    <!-- Camera -->
+    <string name="captured_image">Captured Image</string>
+    <string name="proceed">✓</string>
+    <string name="cancel">X</string>
+    <string name="permission_granted">Camera Ready</string>
+    <string name="permission_not_granted">Permissions not granted by User</string>
+    <string name="capture_failure">Fail to capture an image</string>
+    <string name="photo_saved">Photo saved on %s</string>
+    <string name="result">Room</string>
+    <string name="upload_success">Upload Success</string>
+    <string name="upload_failure">Upload Failure</string>
+
+    <!-- Gallery -->
+    <string name="gallery_card">Gallery Image Card</string>
+    <string name="saved_picture">Saved Picture</string>
+
     <!-- On Boarding Items-->
     <string-array name="onboarding_titles">
         <item>Classify</item>

@@ -11,7 +11,7 @@ interface ApiService {
      * @param file Multipart Image
      **/
     @Multipart
-    @POST("/classify")
+    @POST("loadimg")
     suspend fun classifyImage(
         @Part file: MultipartBody.Part
     ): ClassifyResponses

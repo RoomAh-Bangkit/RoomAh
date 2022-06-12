@@ -16,7 +16,7 @@ class ClassifyRepository @Inject constructor(
      * @param file Image file
      */
     suspend fun classifyImage(
-        file: MultipartBody.Part,
+        file: MultipartBody.Part
     ): Flow<Result<ClassifyResponses>> = flow {
         try {
             val response = apiService.classifyImage(file)
