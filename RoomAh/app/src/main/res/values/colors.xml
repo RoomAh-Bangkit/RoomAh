@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="blue_200">#FFC8E4FF</color>
-    <color name="blue_300">#FF85A3C3</color>
-    <color name="blue_500">#FF607C97</color>
-    <color name="blue_700">#FF04224D</color>
-    <color name="orange_200">#FFFFA26D</color>
-    <color name="orange_500">#FFCC5C1D</color>
-    <color name="yellow_200">#FFFFEB97</color>
+    <color name="blue_300">#FFC8E4FF</color>
+    <color name="blue_300_transparent">#66C8E4FF</color>
+    <color name="blue_500">#FF73ADFF</color>
+    <color name="blue_600">#FF85A3C3</color>
+    <color name="blue_700">#FF607C97</color>
+    <color name="blue_900">#FF04224C</color>
+    <color name="blue_900_transparent">#6604224C</color>
+
+    <color name="brown">#FF9C7E35</color>
+    <color name="orange">#FFF9A01B</color>
+    <color name="orange_transparent">#66F9A01B</color>
+    <color name="red">#FFCC5C1D</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="semi_transparent">#80FFFFFF</color>
+    <color name="white_transparent">#80FFFFFF</color>
     <color name="gray">#FFF0F0F0</color>
     <color name="light">#FFF5FCFF</color>
 </resources>

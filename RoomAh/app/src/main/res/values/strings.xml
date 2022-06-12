@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">RoomAh</string>
+    <string name="folder_name">RoomAh/%s</string>
+    <string name="image_name">%s/%s</string>
+
+    <!-- Splash Screen -->
+    <string name="splash_image">Splash Image</string>
 
     <!-- On Boarding -->
     <string name="onboarding_image">OnBoarding Image</string>
@@ -9,17 +14,47 @@
     <string name="onboarding_next">Next</string>
     <string name="onboarding_move">Get Started</string>
 
+    <!-- Camera -->
+    <string name="captured_image">Captured Image</string>
+    <string name="proceed">✓</string>
+    <string name="cancel">X</string>
+    <string name="permission_granted">Camera Ready</string>
+    <string name="permission_not_granted">Permissions not granted by User</string>
+    <string name="capture_failure">Fail to capture an image</string>
+    <string name="photo_saved">Photo saved on %s</string>
+    <string name="result">Room</string>
+    <string name="upload_success">Upload Success</string>
+    <string name="upload_failure">Upload Failure</string>
+
+    <!-- Gallery -->
+    <string name="gallery_card">Gallery Image Card</string>
+    <string name="saved_picture">Saved Picture</string>
+    <string name="empty_gallery">There is no picture</string>
+    <string name="latest">Latest Photo</string>
+    <string name="bathroom">Bathroom</string>
+    <string name="bedroom">Bedroom</string>
+    <string name="dining_room">Dining Room</string>
+    <string name="kitchen">Kitchen</string>
+    <string name="living_room">Living Room</string>
+    <string name="fetch_success">Fetch Local Image Success</string>
+    <string name="fetch_failure">Fetch Local Image Failure</string>
+
+    <!-- Detail Gallery -->
+    <string name="detail_title">%s</string>
+    <string name="fab">Share Button</string>
+    <string name="share_via">Share image via</string>
+
     <!-- On Boarding Items-->
     <string-array name="onboarding_titles">
-        <item>Lorem Ipsum 1</item>
-        <item>Lorem Ipsum 2</item>
-        <item>Lorem Ipsum 3</item>
+        <item>Classify</item>
+        <item>Save</item>
+        <item>Share</item>
     </string-array>
 
     <string-array name="onboarding_subtitles">
-        <item>1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum, ante quis ultricies egestas, quam justo dignissim quam, sed fringilla augue libero sed tellus.</item>
-        <item>2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum, ante quis ultricies egestas, quam justo dignissim quam, sed fringilla augue libero sed tellus.</item>
-        <item>3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum, ante quis ultricies egestas, quam justo dignissim quam, sed fringilla augue libero sed tellus.</item>
+        <item>The overrepresentation of room’s picture can be reduced by classifying rooms in an establishment based on the submitted pictures</item>
+        <item>There is also the features of saving classified room picture that can be used into your local device </item>
+        <item>Share your accommodation or house to potential buyers here!</item>
     </string-array>
 
     <string-array name="onboarding_images">

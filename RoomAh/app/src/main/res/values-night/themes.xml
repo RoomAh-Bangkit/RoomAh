@@ -1,16 +1,80 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
-    <style name="Theme.RoomAh" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.RoomAh" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/blue_900</item>
+        <item name="colorPrimaryVariant">@color/blue_500</item>
+        <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorSecondaryVariant">@color/red</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.SplashScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:background">@color/blue_900</item>
+        <item name="android:statusBarColor">@color/blue_900</item>
+    </style>
+
+    <style name="Theme.CameraScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <!-- Layout -->
+    <style name="Parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="ColumnContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="RowContent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="Content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- Text -->
+    <style name="Content.Text">
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+        <item name="android:textColor">@color/blue_900</item>
+    </style>
+    <style name="Content.Text.Title">
+        <item name="android:textSize">32sp</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+    <style name="Content.Text.SubTitle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/blue_700</item>
+        <item name="android:fontFamily">@font/open_sans_semi_bold</item>
+    </style>
+    <style name="Content.Text.Big">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/open_sans_semi_bold</item>
+    </style>
+    <style name="Content.Text.Big.Red">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="Content.Text.Medium">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/open_sans_semi_bold</item>
+    </style>
+    <style name="Content.Text.Small">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- Icon & Image -->
+    <style name="CircleButton">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
     </style>
 </resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/camera_nav_graph"
+    app:startDestination="@id/cameraXFragment">
+
+    <fragment
+        android:id="@+id/cameraXFragment"
+        android:name="com.bangkit.roomah.ui.camera.screens.CameraXFragment"
+        android:label="fragment_camera_x"
+        tools:layout="@layout/fragment_camera_x" >
+        <action
+            android:id="@+id/action_cameraXFragment_to_cameraValidateFragment"
+            app:destination="@id/cameraValidateFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out_invers"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/cameraXFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraValidateFragment"
+        android:name="com.bangkit.roomah.ui.camera.screens.CameraValidateFragment"
+        android:label="fragment_camera_validate"
+        tools:layout="@layout/fragment_camera_validate" >
+        <action
+            android:id="@+id/action_cameraValidateFragment_to_cameraResultFragment"
+            app:destination="@id/cameraResultFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out_invers"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/cameraXFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="picture"
+            app:argType="java.io.File" />
+        <argument
+            android:name="isBackCamera"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_cameraValidateFragment_to_cameraXFragment"
+            app:destination="@id/cameraXFragment"
+            app:enterAnim="@anim/slide_in_invers"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/cameraXFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraResultFragment"
+        android:name="com.bangkit.roomah.ui.camera.screens.CameraResultFragment"
+        android:label="fragment_camera_result"
+        tools:layout="@layout/fragment_camera_result" >
+        <argument
+            android:name="picture"
+            app:argType="java.io.File" />
+        <argument
+            android:name="result"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_cameraResultFragment_to_cameraXFragment"
+            app:destination="@id/cameraXFragment"
+            app:enterAnim="@anim/slide_in_invers"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/cameraXFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="isBackCamera"
+            app:argType="boolean" />
+    </fragment>
+</navigation>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- Focused -->
+    <item android:state_focused="true"
+        android:drawable="@drawable/img_gallery">
+    </item>
+    <!-- Pressed -->
+    <item android:state_pressed="true">
+        <layer-list>
+            <item>
+                <shape>
+                    <stroke android:color="@color/blue_300" android:width="1dp" />
+                    <corners android:radius="50dp" />
+                </shape>
+            </item>
+            <item
+                android:top="1dp"
+                android:right="1dp"
+                android:bottom="1dp"
+                android:left="1dp"
+                android:drawable="@drawable/img_gallery">
+            </item>
+        </layer-list>
+    </item>
+    <!-- Unpressed -->
+    <item android:state_pressed="false"
+        android:drawable="@drawable/img_gallery">
+    </item>
+</selector>
