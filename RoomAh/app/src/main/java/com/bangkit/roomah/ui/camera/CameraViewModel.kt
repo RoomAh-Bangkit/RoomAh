@@ -9,14 +9,14 @@ import okhttp3.MultipartBody
 import javax.inject.Inject
 
 @HiltViewModel
-class  CameraViewModel @Inject constructor(
+class CameraViewModel @Inject constructor(
     private val classifyRepo: ClassifyRepository,
 ) : ViewModel() {
     /**
      * Handle image uploading process to the server
      *
      * @param file Image file
-     **/
+     */
     suspend fun classifyImage(
         file: MultipartBody.Part
     ): Flow<Result<ClassifyResponses>> =

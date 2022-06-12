@@ -54,6 +54,9 @@ class OnboardingActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Finish OnBoarding and go to CameraActivity
+     */
     private fun finishOnBoarding() {
         setFinishedOnBoarding()
         FileHandler.initFolders(application)
@@ -64,6 +67,9 @@ class OnboardingActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Set isOnBoardingFinished state on Shared Preferences to true
+     */
     private fun setFinishedOnBoarding() {
         val pref = getSharedPreferences(
             "onBoarding",

@@ -45,6 +45,9 @@ class HomeActivity : AppCompatActivity() {
         return true
     }
 
+    /**
+     * Fetching image from local storage
+     */
     private fun fetchImages(foldername: String) {
         setLoadingState(true)
 
@@ -86,6 +89,11 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Show recycler view
+     *
+     * @param paths List Uri to file
+     */
     private fun showRecyclerView(paths: ArrayList<String>) {
         val rvGallery = binding.rvGallery
 
@@ -93,6 +101,9 @@ class HomeActivity : AppCompatActivity() {
         rvGallery.adapter = GalleryAdapter(paths)
     }
 
+    /**
+     * Set up Top App Bar
+     */
     private fun setUpToolbar() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
@@ -100,11 +111,21 @@ class HomeActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
+    /**
+     * Set up visibility to image and text as empty indicator
+     *
+     * @param isEmptyData is fetched data empty
+     */
     private fun showEmptyImage(isEmptyData: Boolean) {
         binding.emptyImage.visibility = if (isEmptyData) View.VISIBLE else View.GONE
         binding.emptyTitle.visibility = if (isEmptyData) View.VISIBLE else View.GONE
     }
 
+    /**
+     * Set up Loading view on Background process
+     *
+     * @param isLoading is still fetching data from local gallery
+     */
     private fun setLoadingState(isLoading: Boolean) {
         binding.apply {
             rbBathroom.isEnabled = !isLoading

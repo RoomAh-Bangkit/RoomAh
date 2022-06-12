@@ -55,6 +55,9 @@ class CameraResultFragment : Fragment() {
         binding.tvResult.text = result
     }
 
+    /**
+     * Set up Top App Bar
+     */
     private fun setUpToolbar() {
         myActivity.setSupportActionBar(binding.toolbar)
         myActivity.supportActionBar?.setDisplayShowTitleEnabled(false)

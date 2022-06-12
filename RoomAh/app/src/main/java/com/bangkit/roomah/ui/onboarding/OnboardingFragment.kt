@@ -46,6 +46,12 @@ class OnboardingFragment : Fragment() {
         }
     }
 
+    /**
+     * Get OnBoarding screen data from resources based on position
+     *
+     * @param pos screen position start from 0 to 2
+     * @return OnBoarding type
+     */
     private fun getOnBoardingItem(pos: Int) : OnBoarding {
 
         val onboardingTitle = resources.getStringArray(R.array.onboarding_titles)

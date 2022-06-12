@@ -41,6 +41,11 @@ class SplashActivity : AppCompatActivity() {
         }, SPLASH_DELAY)
     }
 
+    /**
+     * Get isOnBoardingFinished state on Shared Preferences
+     *
+     * @return boolean is onboarding finished
+     */
     private fun isOnBoardingFinished() : Boolean =
         getSharedPreferences(
             "onBoarding",

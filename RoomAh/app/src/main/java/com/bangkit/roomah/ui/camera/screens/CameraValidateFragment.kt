@@ -66,6 +66,9 @@ class CameraValidateFragment : Fragment() {
         setUpActions()
     }
 
+    /**
+     * Set up Button OnClick
+     */
     private fun setUpActions() {
         binding.apply {
             btnProceed.setOnClickListener {
@@ -78,6 +81,9 @@ class CameraValidateFragment : Fragment() {
         }
     }
 
+    /**
+     * Classifying image captured or uploaded from gallery
+     */
     private fun classifyImage() {
         setLoadingState(true)
 
@@ -121,6 +127,11 @@ class CameraValidateFragment : Fragment() {
         }
     }
 
+    /**
+     * Set up Loading view on Background process
+     *
+     * @param isLoading is still sending request data to server
+     */
     private fun setLoadingState(isLoading: Boolean) {
         binding.apply {
             btnProceed.isEnabled = !isLoading
