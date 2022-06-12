@@ -195,12 +195,14 @@ class CameraXFragment : Fragment() {
      */
     private fun setUpActions() {
         binding.apply {
-            if (allPermissionGranted()) {
-                btnCapture.setOnClickListener {
+            btnCapture.setOnClickListener {
+                if (allPermissionGranted()) {
                     takePhoto()
                 }
+            }
 
-                btnSwitch.setOnClickListener {
+            btnSwitch.setOnClickListener {
+                if (allPermissionGranted()) {
                     cameraSelector =
                         if (cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA)
                             CameraSelector.DEFAULT_FRONT_CAMERA

@@ -87,16 +87,16 @@ class CameraValidateFragment : Fragment() {
     private fun classifyImage() {
         setLoadingState(true)
 
-        val file = FileHandler.reduceFileImage(getFile)
-        val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
-        val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
-            "file",
-            file.name,
-            requestImageFile
-        )
-
         lifecycleScope.launchWhenStarted {
             launch {
+                val file = FileHandler.reduceFileImage(getFile)
+                val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
+                val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
+                    "file",
+                    file.name,
+                    requestImageFile
+                )
+
                 cameraViewModel.classifyImage(imageMultipart).collect { response ->
                     response.onSuccess {
                         Toast.makeText(
